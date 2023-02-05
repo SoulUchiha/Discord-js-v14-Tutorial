@@ -75,7 +75,7 @@ client.on('messageCreate', async message =>{
         }
 
         // Bot Permissions Check
-        if (!message.guild.me.permissions.has(command.botPermissions || []))
+        if (!message.guild.members.me.permissions.has(command.botPermissions || []))
             return message.reply({
                 content: `I need \`${cmd.botPermissions || []}\` permissions to run this command`
             });
